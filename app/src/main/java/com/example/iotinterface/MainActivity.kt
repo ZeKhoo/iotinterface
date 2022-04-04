@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-
+    //testing github
     val widget1: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
     val widget2: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
     val widget3: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
