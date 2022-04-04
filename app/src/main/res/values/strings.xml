@@ -39,4 +39,41 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="toggle">Toggle Button</string>
+    <string name="On">The toggle is on</string>
+    <string name="Off">The toggle is off</string>
+    <string name="Slider">Slider (0-100)</string>
+    <string name="read">Read</string>
+    <string name="widgetName">Widget Name: </string>
+    <string name="refresh">Refresh</string>
+    <string name="disWidth">Width: </string>
+    <string name="disHeight">Height: </string>
+    <string name="disValue">Value: </string>
+    <string name="disMin">Min: </string>
+    <string name="disMax">Max: </string>
+
+    <string name="appName">DynamicButton</string>
+    <string name="show_text">Show Text</string>
+    <string name="create">Create</string>
+    <string name="click_on_me">Click on me</string>
+    <string name="reset">RESET</string>
+    <string name="confirm">CONFIRM</string>
+
+    //Keypad Value
+    <string name="keypad1">1</string>
+    <string name="keypad2">2</string>
+    <string name="keypad3">3</string>
+    <string name="keypad4">4</string>
+    <string name="keypad5">5</string>
+    <string name="keypad6">6</string>
+    <string name="keypad7">7</string>
+    <string name="keypad8">8</string>
+    <string name="keypad9">9</string>
+    <string name="keypad0">0</string>
+    <string name="keypadStar">*</string>
+    <string name="keypaddel">Del</string>
+
+    //Direction Button
+    <string name="OK">OK</string>
+
 </resources>

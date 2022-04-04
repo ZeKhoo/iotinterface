@@ -3,14 +3,10 @@ package com.example.iotinterface.widget1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.service.controls.Control
 import android.widget.Toast
 import com.example.iotinterface.DatabaseModel
-import com.example.iotinterface.MainActivity
-import com.example.iotinterface.R
-import com.example.iotinterface.databinding.ActivityArrowW1Binding.inflate
-import com.example.iotinterface.databinding.ActivityMainBinding
 import com.example.iotinterface.databinding.ActivityOnoffw1Binding
+import com.example.iotinterface.create.createActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_onoffw1.*
@@ -31,9 +27,10 @@ class OnOffActivityW1 : AppCompatActivity() {
         reference = database.getReference("Users")
 
 
-//        binding.buttonOnOffW1.setOnClickListener {
-//
-//        }
+        binding.buttonOnOffW1.setOnClickListener {
+            val intent = Intent(this, createActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.buttonAddWidgetW1.setOnClickListener{
             sendData()

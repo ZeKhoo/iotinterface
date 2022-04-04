@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/60169/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/drawable-v24/divider.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_create.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_on_off_w2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_onoffw1.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/displaywgt.xml" value="0.1" />
         <entry key="..\:/iotinterface/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/iotinterface/app/src/main/res/layout/activity_onoffw1.xml" value="0.4" />
       </map>
