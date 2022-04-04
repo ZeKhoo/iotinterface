@@ -6,8 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".widget2.ArrowActivityW2">
 
+    <Button
+        android:id="@+id/buttonSaveArrowW2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Show widget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVariableArrowW2" />
+
+    <Spinner
+        android:id="@+id/spinnerControlArrowW2"
+        android:layout_width="119dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/Control"
+        app:layout_constraintStart_toEndOf="@+id/textViewControlArrowW2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDeviceArrowW2" />
+
     <TextView
-        android:id="@+id/textViewLeftRightW2"
+        android:id="@+id/textViewVariableArrowW2"
+        android:layout_width="78dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:text="Variable"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="519dp" />
+
+    <TextView
+        android:id="@+id/textViewControlArrowW2"
+        android:layout_width="78dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="120dp"
+        android:text="Control"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerVariableArrowW2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDeviceArrowW2" />
+
+    <Spinner
+        android:id="@+id/spinnerVariableArrowW2"
+        android:layout_width="119dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/Control"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerControlArrowW2"
+        tools:layout_editor_absoluteX="195dp" />
+
+    <Spinner
+        android:id="@+id/spinnerDeviceArrowW2"
+        android:layout_width="119dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/Devices"
+        app:layout_constraintStart_toEndOf="@+id/textViewDeviceArrowW2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerArrowOk2W2" />
+
+    <TextView
+        android:id="@+id/textViewLeftRightArrowW2"
         android:layout_width="163dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
@@ -15,7 +78,7 @@
         android:text="Left/Right Button:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewOkW2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewOkArrowW2" />
 
     <EditText
         android:id="@+id/editTextTextArrowColorW2"
@@ -62,27 +125,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinnerArrowOk1w2"
+        android:id="@+id/spinnerArrowOk1W2"
         android:layout_width="119dp"
         android:layout_height="50dp"
         android:layout_marginStart="56dp"
         android:layout_marginTop="20dp"
         android:entries="@array/YesNo"
-        app:layout_constraintStart_toEndOf="@+id/textViewOkW2"
+        app:layout_constraintStart_toEndOf="@+id/textViewOkArrowW2"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextArrowColorW2" />
 
     <Spinner
-        android:id="@+id/spinnerArrowOk2w2"
+        android:id="@+id/spinnerArrowOk2W2"
         android:layout_width="119dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:entries="@array/YesNo"
-        app:layout_constraintStart_toEndOf="@+id/textViewLeftRightW2"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerArrowOk1w2" />
+        app:layout_constraintStart_toEndOf="@+id/textViewLeftRightArrowW2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerArrowOk1W2" />
 
     <TextView
-        android:id="@+id/textViewOkW2"
+        android:id="@+id/textViewOkArrowW2"
         android:layout_width="131dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -100,6 +163,17 @@
         android:layout_marginEnd="16dp"
         android:text="Show widget"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerArrowOk2w2" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerVariableArrowW2" />
+
+    <TextView
+        android:id="@+id/textViewDeviceArrowW2"
+        android:layout_width="64dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:text="Device"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLeftRightArrowW2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

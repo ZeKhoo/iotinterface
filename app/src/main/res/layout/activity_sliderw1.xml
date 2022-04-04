@@ -7,18 +7,43 @@
     tools:context=".widget1.SliderActivityW1">
 
 
+    <TextView
+        android:id="@+id/textViewSliderAttributeW1"
+        android:layout_width="111dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:text="Slider"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <Spinner
-        android:id="@+id/spinnerControlSliderW2"
+        android:id="@+id/spinnerVariablelSlidersW1"
         android:layout_width="150dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="56dp"
+        android:entries="@array/Control"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintStart_toEndOf="@+id/textViewVariablelSliderW1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerControlSlidersW1" />
+
+    <Spinner
+        android:id="@+id/spinnerControlSlidersW1"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/Control"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toEndOf="@+id/textViewVariablelSliderW"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerControlSliderW1" />
+        app:layout_constraintStart_toEndOf="@+id/textViewStatusSliderW1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDeviceSlidersW1" />
 
     <TextView
-        android:id="@+id/textViewVariablelSliderW"
+        android:id="@+id/textViewVariablelSliderW1"
         android:layout_width="134dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
@@ -29,17 +54,18 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewStatusSliderW1" />
 
     <Spinner
-        android:id="@+id/spinnerControlSliderW"
+        android:id="@+id/spinnerDeviceSlidersW1"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginTop="36dp"
+        android:entries="@array/Devices"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toEndOf="@+id/textViewStatusSliderW1"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextSliderColorW1" />
 
     <TextView
-        android:id="@+id/textViewDeviceslSliderW"
+        android:id="@+id/textViewDevicesSliderW1"
         android:layout_width="134dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
@@ -129,38 +155,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSliderAttributeW1" />
 
-    <TextView
-        android:id="@+id/textViewSliderAttributeW1"
-        android:layout_width="112dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="16dp"
-        android:text="Slider"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonSliderW1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="Show Widget"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerControlSliderW2" />
-
-    <Spinner
-        android:id="@+id/spinnerControlSliderW1"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:entries="@array/Control"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toEndOf="@+id/textViewStatusSliderW1"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerControlSliderW" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerVariablelSlidersW1" />
 
     <TextView
         android:id="@+id/textViewStatusSliderW1"
@@ -171,6 +175,6 @@
         android:text="Control/Status"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDeviceslSliderW" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDevicesSliderW1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

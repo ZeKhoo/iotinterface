@@ -6,6 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".widget1.NumPadActivityW1">
 
+    <Spinner
+        android:id="@+id/spinnerVariableNumW1"
+        android:layout_width="135dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="28dp"
+        android:entries="@array/Control"
+        app:layout_constraintStart_toEndOf="@+id/textViewVariablelNumW1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerControlNumW1" />
+
+    <TextView
+        android:id="@+id/textViewVariablelNumW1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:text="Variable"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewControlNumW1" />
+
+    <Spinner
+        android:id="@+id/spinnerControlNumW1"
+        android:layout_width="135dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:entries="@array/Control"
+        app:layout_constraintStart_toEndOf="@+id/textViewControlNumW1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDeviceNumW1" />
+
+    <TextView
+        android:id="@+id/textViewControlNumW1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Control/Status"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDeviceNumW1" />
+
     <EditText
         android:id="@+id/editTextTextNumPadColorW1"
         android:layout_width="0dp"
@@ -53,10 +95,41 @@
         android:id="@+id/buttonNumPadW1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="16dp"
         android:text="Show Widget"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerVariableNumW1" />
+
+    <TextView
+        android:id="@+id/textViewDeviceNumW1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="Devices"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextNumPadColorW1" />
+
+    <Spinner
+        android:id="@+id/spinnerDeviceNumW1"
+        android:layout_width="135dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="20dp"
+        android:entries="@array/Devices"
+        app:layout_constraintStart_toEndOf="@+id/textViewDeviceNumW1"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextNumPadColorW1" />
+
+    <Button
+        android:id="@+id/buttonAddNumW1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:text="ADD widget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVariablelNumW1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

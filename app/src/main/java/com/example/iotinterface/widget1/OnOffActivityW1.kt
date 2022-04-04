@@ -28,6 +28,7 @@ class OnOffActivityW1 : AppCompatActivity() {
 
 
         binding.buttonOnOffW1.setOnClickListener {
+            sendData()
             val intent = Intent(this, createActivity::class.java)
             startActivity(intent)
         }
