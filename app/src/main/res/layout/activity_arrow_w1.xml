@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".widget1.ArrowActivityW1">
+
+    <TextView
+        android:id="@+id/textViewLeftRightW1"
+        android:layout_width="163dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:text="Left/Right Button:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOkW1" />
+
+    <EditText
+        android:id="@+id/editTextTextArrowColorW1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Colour"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextArrowNameW1" />
+
+    <EditText
+        android:id="@+id/editTextTextArrowNameW1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewArrowW1" />
+
+    <TextView
+        android:id="@+id/textViewArrowW1"
+        android:layout_width="222dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        android:text="Arrow"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerArrowOk"
+        android:layout_width="119dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        android:entries="@array/YesNo"
+        app:layout_constraintStart_toEndOf="@+id/textViewOkW1"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextArrowColorW1" />
+
+    <Spinner
+        android:id="@+id/spinnerArrowOk2"
+        android:layout_width="119dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:entries="@array/YesNo"
+        app:layout_constraintStart_toEndOf="@+id/textViewLeftRightW1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerArrowOk" />
+
+    <TextView
+        android:id="@+id/textViewOkW1"
+        android:layout_width="131dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="OK  Button :"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextArrowColorW1" />
+
+    <Button
+        android:id="@+id/buttonArrowW2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Show widget"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerArrowOk2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

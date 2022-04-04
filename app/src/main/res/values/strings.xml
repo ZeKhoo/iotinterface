@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">iot interface</string>
+
+    <string-array name="slider">
+        <item>Name</item>
+        <item>Initial Value</item>
+        <item>Minimal Value</item>
+        <item>Maximum Value</item>
+        <item>Status</item>
+    </string-array>
+
+    <string-array name="onoff">
+        <item>Name</item>
+        <item>Initial Value</item>
+        <item>Color</item>
+    </string-array>
+
+    <string-array name="num_pad">
+        <item>Name</item>
+        <item>Color</item>
+    </string-array>
+
+    <string-array name="udlr">
+        <item>Name</item>
+        <item>Color</item>
+    </string-array>
+
+    <string-array name="YesNo">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="Control">
+        <item>Control</item>
+        <item>Status</item>
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

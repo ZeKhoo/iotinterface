@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1026013945584",
+    "firebase_url": "https://iot-virtual-control-default-rtdb.firebaseio.com",
+    "project_id": "iot-virtual-control",
+    "storage_bucket": "iot-virtual-control.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026013945584:android:f3d9b0553bd8f3c021ec35",
+        "android_client_info": {
+          "package_name": "com.example.iotinterface"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026013945584-l5p0c9o1jtvbcj1nl2ac2esfc15l8u4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApcSKxUmUkeO_63yFGVBU-w61vPi7-URc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026013945584-l5p0c9o1jtvbcj1nl2ac2esfc15l8u4b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
