@@ -1,4 +1,4 @@
-package com.example.iotinterface.widget5
+package com.example.iotinterface.widget1
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,35 +6,35 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.iotinterface.R
 import com.example.iotinterface.create.createActivity
-import com.example.iotinterface.databinding.ActivityOnOffW4Binding
-import com.example.iotinterface.databinding.ActivityOnOffW5Binding
-import com.example.iotinterface.widget3.DatabaseModelOnW3
+import com.example.iotinterface.databinding.ActivityArrowW1Binding
+import com.example.iotinterface.databinding.ActivityColorPickW1Binding
+import com.example.iotinterface.databinding.ActivityOnoffw1Binding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_on_off_w4.*
-import kotlinx.android.synthetic.main.activity_on_off_w5.*
+import kotlinx.android.synthetic.main.activity_arrow_w1.*
+import kotlinx.android.synthetic.main.activity_color_pick_w1.*
 
-class OnOffActivityW5 : AppCompatActivity() {
+class Color_Pick_W1Activity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityOnOffW5Binding
+    private lateinit var binding: ActivityColorPickW1Binding
     private lateinit var database : FirebaseDatabase
     private lateinit var reference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOnOffW5Binding.inflate(layoutInflater)
+        binding = ActivityColorPickW1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         database= FirebaseDatabase.getInstance()
         reference = database.getReference("Users")
 
-        binding.buttonOnOffW5.setOnClickListener {
+        binding.buttonColorPickW1.setOnClickListener {
             sendData()
             val intent = Intent(this, createActivity::class.java)
             startActivity(intent)
         }
 
-        binding.buttonAddOnOffW5.setOnClickListener{
+        binding.buttonAddColorPickW1.setOnClickListener{
             sendData()
             finish()
         }
@@ -46,23 +46,19 @@ class OnOffActivityW5 : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.title = "Attributes Descriptor"
         actionBar.setDisplayHomeAsUpEnabled(true)
+
     }
 
     private fun sendData() {
-        val nameonw5 = editTextTextOnOffNameW5.text.toString().trim()
-        val initialonw5 = editTextTextOnOffInitialW5.text.toString().trim()
-        val colouronw5 = editTextTextOnOffColourW5.text.toString().trim()
+        val namecolourpw1 = editTextTextColorPickNameW1.text.toString().trim()
 
-        if(nameonw5.isNotEmpty() && initialonw5.isNotEmpty() && colouronw5.isNotEmpty()){
-            val modelOnW5 = DatabaseModelOnW5(nameonw5,initialonw5,colouronw5)
+        if(namecolourpw1.isNotEmpty()){
+            val modelColorPickW1 = DatabaseModelColorPickW1(namecolourpw1)
             val id= reference.push().key
 
-            reference.child(id!!).setValue(modelOnW5)
+            reference.child(id!!).setValue(modelColorPickW1)
 
-            editTextTextOnOffNameW5.setText("")
-            editTextTextOnOffInitialW5.setText("")
-            editTextTextOnOffColourW5.setText("")
-
+            editTextTextColorPickNameW1.setText("")
         }
         else{
             Toast.makeText(applicationContext, "Failed", Toast.LENGTH_LONG).show()

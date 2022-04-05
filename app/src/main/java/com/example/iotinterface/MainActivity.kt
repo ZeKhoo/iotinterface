@@ -21,11 +21,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     //testing github
-    val widget1: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
-    val widget2: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
-    val widget3: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
-    val widget4: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
-    val widget5: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
+    val widget1: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster","Color Picker", "Radio Button")
+    val widget2: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster","Color Picker", "Radio Button")
+    val widget3: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster","Color Picker", "Radio Button")
+    val widget4: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster","Color Picker", "Radio Button")
+    val widget5: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster","Color Picker", "Radio Button")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -79,6 +79,14 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, UpDownActivityW1::class.java)
                 startActivity(intent)
             }
+            else if(option1==5){
+                val intent = Intent(this, Color_Pick_W1Activity::class.java)
+                startActivity(intent)
+            }
+            else if(option1==6){
+                val intent = Intent(this, RadioW1Activity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding.buttonNext2.setOnClickListener {
@@ -105,6 +113,14 @@ class MainActivity : AppCompatActivity() {
 
             else if(option2==4){
                 val intent = Intent(this, UpDownActivityW2::class.java)
+                startActivity(intent)
+            }
+            else if(option2==5){
+                val intent = Intent(this, Color_Pick_W2Activity::class.java)
+                startActivity(intent)
+            }
+            else if(option2==6){
+                val intent = Intent(this, RadioW2Activity::class.java)
                 startActivity(intent)
             }
         }
@@ -135,6 +151,14 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, UpDownActivityW3::class.java)
                 startActivity(intent)
             }
+            else if(option3==5){
+                val intent = Intent(this, Color_Pick_W3Activity::class.java)
+                startActivity(intent)
+            }
+            else if(option3==6){
+                val intent = Intent(this, RadioW3Activity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding.buttonNext4.setOnClickListener {
@@ -163,6 +187,14 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, UpDownActivityW4::class.java)
                 startActivity(intent)
             }
+            else if(option4==5){
+                val intent = Intent(this, Color_Pick_W4Activity::class.java)
+                startActivity(intent)
+            }
+            else if(option4==6){
+                val intent = Intent(this, RadioW4Activity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding.buttonNext5.setOnClickListener {
@@ -189,6 +221,14 @@ class MainActivity : AppCompatActivity() {
 
             else if(option5==4){
                 val intent = Intent(this, UpDownActivityW5::class.java)
+                startActivity(intent)
+            }
+            else if(option5==5){
+                val intent = Intent(this, Color_Pick_W5Activity::class.java)
+                startActivity(intent)
+            }
+            else if(option5==6){
+                val intent = Intent(this, RadioW5Activity::class.java)
                 startActivity(intent)
             }
         }

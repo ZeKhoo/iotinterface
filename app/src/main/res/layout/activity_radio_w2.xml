@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".widget2.RadioW2Activity">
+
+    <EditText
+        android:id="@+id/editTextTextRadio1W2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Radio Button 1"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRadioNumberW2" />
+
+    <EditText
+        android:id="@+id/editTextTextRadio2W2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Radio Button 2"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextRadio1W2" />
+
+    <EditText
+        android:id="@+id/editTextTextRadio3W2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Radio Button 3"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextRadio2W2" />
+
+    <TextView
+        android:id="@+id/textViewRadioNumberW2"
+        android:layout_width="181dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Number of Button"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextRadioNameW2" />
+
+    <EditText
+        android:id="@+id/editTextTextRadioNameW2"
+        android:layout_width="384dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRadioW2" />
+
+    <TextView
+        android:id="@+id/textViewRadioW2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Radio Button"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDeviceRadioW2"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="Device"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextRadio3W2" />
+
+    <Spinner
+        android:id="@+id/spinnerDeviceRadioW2"
+        android:layout_width="133dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="20dp"
+        android:entries="@array/Devices"
+        app:layout_constraintStart_toEndOf="@+id/textViewDeviceRadioW2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextRadio3W2" />
+
+    <TextView
+        android:id="@+id/textViewConrtolRadioW2"
+        android:layout_width="161dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="Control/Status"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDeviceRadioW2" />
+
+    <Spinner
+        android:id="@+id/spinnerControlRadioW2"
+        android:layout_width="152dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="24dp"
+        android:entries="@array/Control"
+        app:layout_constraintStart_toEndOf="@+id/textViewConrtolRadioW2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDeviceRadioW2" />
+
+    <TextView
+        android:id="@+id/textViewVariableRadioW2"
+        android:layout_width="81dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:text="Variable"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewConrtolRadioW2" />
+
+    <Spinner
+        android:id="@+id/spinnerVariableRadioW2"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="40dp"
+        android:entries="@array/variable"
+        app:layout_constraintStart_toEndOf="@+id/textViewVariableRadioW2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerControlRadioW2" />
+
+    <Spinner
+        android:id="@+id/spinnerNumberRadioW2"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:entries="@array/number"
+        app:layout_constraintStart_toEndOf="@+id/textViewRadioNumberW2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextRadioNameW2" />
+
+    <Button
+        android:id="@+id/buttonRadioW2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="Show widget"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerVariableRadioW2" />
+
+    <Button
+        android:id="@+id/buttonAddRadioW2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:text="Add widget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVariableRadioW2" />
+
+    <Button
+        android:id="@+id/buttonConRadioW2"
+        android:layout_width="81dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="OK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerNumberRadioW2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

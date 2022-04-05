@@ -42,6 +42,22 @@
         <item>TV</item>
     </string-array>
 
+    <string-array name="number">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="variable">
+        <item>fan_speed</item>
+        <item>led</item>
+        <item>mode</item>
+        <item>temperature</item>
+        <item>brightness</item>
+        <item>color</item>
+        <item>channel</item>
+        <item>volume</item>
+    </string-array>
 
 
     <!-- TODO: Remove or change this placeholder text -->

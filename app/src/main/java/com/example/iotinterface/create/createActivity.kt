@@ -1,9 +1,7 @@
 package com.example.iotinterface.create
 
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.text.Html
 import android.util.Log
 import android.view.Gravity
 import android.view.View
@@ -18,7 +16,6 @@ import com.example.iotinterface.databinding.ActivityCreateBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -27,7 +24,7 @@ class createActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateBinding
     private lateinit var widgetRecyclerView: RecyclerView
     private lateinit var wgtArrayList: ArrayList<Any>
-//    private lateinit var buttonsList: ArrayList<View>
+    //    private lateinit var buttonsList: ArrayList<View>
     private lateinit var radioBtnList: ArrayList<RadioButton>
     private var SHORT_DELAY: Int = 1000
 

@@ -53,7 +53,7 @@ class OnOffActivityW4 : AppCompatActivity() {
         val colouronw4 = editTextTextOnOffColourW4.text.toString().trim()
 
         if(nameonw4 .isNotEmpty() && initialonw4.isNotEmpty() && colouronw4.isNotEmpty()){
-            val modelOnW4 = DatabaseModelOnW3(nameonw4,initialonw4,colouronw4)
+            val modelOnW4 = DatabaseModelOnW4(nameonw4,initialonw4,colouronw4)
             val id= reference.push().key
 
             reference.child(id!!).setValue(modelOnW4)
