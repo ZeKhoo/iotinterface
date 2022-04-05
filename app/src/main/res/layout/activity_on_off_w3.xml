@@ -7,7 +7,7 @@
     tools:context=".widget3.OnOffActivityW3">
 
     <Button
-        android:id="@+id/buttonAddWidgetW3"
+        android:id="@+id/buttonAddOnOffW3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
