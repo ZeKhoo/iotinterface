@@ -4,14 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.iotinterface.R
-import com.example.iotinterface.create.createActivity
-import com.example.iotinterface.databinding.ActivityArrowW2Binding
+import com.example.iotinterface.create.airconActivity
 import com.example.iotinterface.databinding.ActivityArrowW3Binding
-import com.example.iotinterface.widget2.DatabaseModelArrowW2
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_arrow_w2.*
 import kotlinx.android.synthetic.main.activity_arrow_w3.*
 
 class ArrowActivityW3 : AppCompatActivity() {
@@ -31,7 +27,7 @@ class ArrowActivityW3 : AppCompatActivity() {
 
         binding.buttonArrowW3.setOnClickListener {
             sendData()
-            val intent = Intent(this, createActivity::class.java)
+            val intent = Intent(this, airconActivity::class.java)
             startActivity(intent)
         }
 

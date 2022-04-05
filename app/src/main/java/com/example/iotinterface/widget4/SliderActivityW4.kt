@@ -4,18 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.iotinterface.R
-import com.example.iotinterface.create.createActivity
-import com.example.iotinterface.databinding.ActivityOnOffW3Binding
-import com.example.iotinterface.databinding.ActivityOnOffW4Binding
+import com.example.iotinterface.create.airconActivity
 import com.example.iotinterface.databinding.ActivitySliderW4Binding
-import com.example.iotinterface.widget2.DatabaseModelOnW2
-import com.example.iotinterface.widget3.DatabaseModelSliderW3
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_on_off_w3.*
-import kotlinx.android.synthetic.main.activity_on_off_w4.*
-import kotlinx.android.synthetic.main.activity_slider_w3.*
 import kotlinx.android.synthetic.main.activity_slider_w4.*
 
 class SliderActivityW4 : AppCompatActivity() {
@@ -34,7 +26,7 @@ class SliderActivityW4 : AppCompatActivity() {
 
         binding.buttonSliderW4.setOnClickListener {
             sendData()
-            val intent = Intent(this, createActivity::class.java)
+            val intent = Intent(this, airconActivity::class.java)
             startActivity(intent)
         }
 

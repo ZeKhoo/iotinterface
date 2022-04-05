@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.iotinterface.create.createActivity
+import com.example.iotinterface.create.airconActivity
 import com.example.iotinterface.databinding.ActivityMainBinding
 import com.example.iotinterface.widget1.*
 import com.example.iotinterface.widget2.*
@@ -194,7 +194,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonShowWidgetAll.setOnClickListener{
-            val intent = Intent(this, createActivity::class.java)
+            val intent = Intent(this, airconActivity::class.java)
             startActivity(intent)
         }
 

@@ -3,35 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w1.xml" value="0.264" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w2.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w3.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w4.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w5.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_create.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_get_data.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_main.xml" value="0.36328125" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_num_pad_w2.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_num_pad_w3.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_num_pad_w4.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_num_pad_w5.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_numpadw1.xml" value="0.4" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_on_off_w2.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_on_off_w3.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_on_off_w4.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_on_off_w5.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_onoffw1.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_slider_w2.xml" value="0.4" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_slider_w3.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_slider_w4.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_slider_w5.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_sliderw1.xml" value="0.4" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_up_down_w2.xml" value="0.20430107526881722" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_up_down_w3.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_up_down_w4.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_up_down_w5.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_updownw1.xml" value="0.264" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/displaywgt.xml" value="0.4" />
+        <entry key="..\:/Users/60169/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/drawable-v24/divider.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/drawable/buttonBlue.xml" value="0.1215" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/drawable/buttonRed.xml" value="0.1215" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/drawable/button_blue.xml" value="0.1215" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/drawable/button_green.xml" value="0.1215" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/drawable/button_red.xml" value="0.1215" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/drawable/lcd_view.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_arrow_w2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_create.xml" value="0.28433734939759037" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_fan.xml" value="0.4" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_on_off_w2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_on_off_w3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_onoffw1.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/activity_slider_w2.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/iotinterface/app/src/main/res/layout/displaywgt.xml" value="0.1" />
+        <entry key="..\:/iotinterface/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/iotinterface/app/src/main/res/layout/activity_onoffw1.xml" value="0.4" />
       </map>
     </option>
   </component>

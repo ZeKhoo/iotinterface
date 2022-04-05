@@ -4,15 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.iotinterface.R
-import com.example.iotinterface.create.createActivity
+import com.example.iotinterface.create.airconActivity
 import com.example.iotinterface.databinding.ActivityUpDownW2Binding
-import com.example.iotinterface.databinding.ActivityUpdownw1Binding
-import com.example.iotinterface.widget1.DatabaseModelUpDownW1
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_up_down_w2.*
-import kotlinx.android.synthetic.main.activity_updownw1.*
 
 class UpDownActivityW2 : AppCompatActivity() {
 
@@ -30,7 +26,7 @@ class UpDownActivityW2 : AppCompatActivity() {
 
         binding.buttonAdjusterW2.setOnClickListener {
             sendData()
-            val intent = Intent(this, createActivity::class.java)
+            val intent = Intent(this, airconActivity::class.java)
             startActivity(intent)
         }
 

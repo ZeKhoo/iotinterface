@@ -1,7 +1,9 @@
 package com.example.iotinterface.create
 
-import android.content.ContentValues.TAG
+import android.R
+import android.content.ContentValues
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -9,31 +11,28 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.iotinterface.R
 import com.example.iotinterface.create.IoTType.airconChild
+import com.example.iotinterface.create.IoTType.fanChild
 import com.example.iotinterface.create.widgetAttr.*
 import com.example.iotinterface.databinding.ActivityCreateBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import java.util.*
+import java.util.ArrayList
 
-
-class createActivity : AppCompatActivity() {
+class fanActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateBinding
     private lateinit var widgetRecyclerView: RecyclerView
     private lateinit var wgtArrayList: ArrayList<Any>
-//    private lateinit var buttonsList: ArrayList<View>
+    //    private lateinit var buttonsList: ArrayList<View>
     private lateinit var radioBtnList: ArrayList<RadioButton>
     private var SHORT_DELAY: Int = 1000
 
-    private var lcdfan: String = "1"
-    private var lcdled: String = "red"
-    private var lcdmode: String = "Fan"
-    private var lcdTemperature: String = "20"
-    private var lcdswitch: String = "1"
+    private var switch: String = "0"
+    private var brightness: String = "50"
+    private var fan_speed: String = "2"
+    private var led: String = "red"
 
     //Firebase Reference
     private lateinit var dbRef: DatabaseReference
@@ -44,34 +43,19 @@ class createActivity : AppCompatActivity() {
         binding = ActivityCreateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Declare arrayList Attr
-//        widgetRecyclerView = binding.container
-//        widgetRecyclerView.layoutManager = LinearLayoutManager(this)
-//        widgetRecyclerView.setHasFixedSize(true)
-
-//        widgetRecyclerView.addItemDecoration(
-//            DividerItemDecoration(
-//                binding.container.getContext(),
-//                DividerItemDecoration.VERTICAL
-//            )
-//        )
-
         //Set Text
-        var widgetType: String = "Aircon"
+        var widgetType: String = "Fan"
         binding.textViewTtile.text = widgetType
 
         wgtArrayList = arrayListOf<Any>()
         val ledList = arrayOf("red", "blue", "green")
-        val modelist = arrayOf("fan", "cool", "sleep")
 
-        wgtArrayList.add(toggleBtnAttr("switch ", "1", "green"))
-        wgtArrayList.add(seekBarAttr("fan_speed", 0, 4, "1"))
-        wgtArrayList.add(spinnerAttr("led", "red", ledList))
-        wgtArrayList.add(radioBtnAttr("mode", 3, "Fan", "green", modelist))
-        wgtArrayList.add(seekBarAttr("temperature", 16, 30, "20"))
+        wgtArrayList.add(toggleBtnAttr("switch ", fan_speed, "green"))
+        wgtArrayList.add(seekBarAttr("brightness", 0, 100, brightness))
+        wgtArrayList.add(seekBarAttr("fan_speed", 0, 4, fan_speed))
+        wgtArrayList.add(spinnerAttr("led", led, ledList))
 
-//        var displayStatus:String = "Fan speed = "+"<b>"+lcdfan+"</b>"+"\nLed Color = "+"<b>"+lcdled+"</b>"+"\nMode = "+"<b>"+lcdmode+"</b>"+"Temperatuew = "+"<b>"+lcdTemperature+"</b>"
-        var displayStatus:String = "Fan speed = "+lcdfan+"\nLed Color = "+lcdled+"\nMode = "+lcdmode+"\nTemperature = "+lcdTemperature
+        var displayStatus:String = "Brightness = "+brightness+"\nFan Speed = "+fan_speed+"\nLed Color = "+led
         binding.textViewStatus.setText(displayStatus)
 
         for (i in 0 until wgtArrayList.size){
@@ -86,7 +70,7 @@ class createActivity : AppCompatActivity() {
         }
 
         binding.buttonReset.setOnClickListener(){
-            val ll: LinearLayout = findViewById(R.id.container)
+            val ll: LinearLayout = findViewById(com.example.iotinterface.R.id.container)
             ll.removeAllViews()
 
             for (i in 0 until wgtArrayList.size){
@@ -103,37 +87,36 @@ class createActivity : AppCompatActivity() {
 
         binding.buttonConfirm.setOnClickListener(){
 
-            var updateStatus:String = "Fan speed = "+lcdfan+"\nLed Color = "+lcdled+"\nMode = "+lcdmode+"\nTemperature = "+lcdTemperature
-            binding.textViewStatus.setText(updateStatus)
+            var displayStatus:String = "Brightness = "+brightness+"\nFan Speed = "+fan_speed+"\nLed Color = "+led
+            binding.textViewStatus.setText(displayStatus)
 
-            Toast.makeText(this@createActivity,
+            Toast.makeText(this@fanActivity,
                 "Updated",
                 Toast.LENGTH_SHORT
             ).show()
 
-            Log.d("Create", lcdswitch)
-
             //Updated Firebase
-            writeNewUser(widgetType, lcdfan, lcdled, lcdmode, lcdTemperature, lcdswitch)
+            writeNewUser(widgetType, brightness, fan_speed, led, switch)
         }
     }
 
-    private fun writeNewUser(name: String, fan_speed: String, led: String, mode: String, temperature: String, switch: String) {
+    private fun writeNewUser(
+        name: String,
+        brightness: String,
+        fan_speed: String,
+        led: String,
+        switch: String
+    ) {
         dbRef = Firebase.database.reference
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
         val key = dbRef.child(name).child("Control").push().key
         if (key == null) {
-            Log.w(TAG, "Couldn't get push key for posts")
+            Log.w(ContentValues.TAG, "Couldn't get push key for posts")
             return
         }
 
-        var lcdfan: String = "Fan Speed = "+ fan_speed
-        var lcdled:String = "Led Color = " + led
-        var lcdmode: String = "Mode = "+ mode
-        var lcdtemp:String = "Temperature = " + temperature
-
-        val post = airconChild(name, fan_speed, lcdfan, lcdled, lcdmode, lcdtemp, led, mode, switch, temperature)
+        val post = fanChild(name, brightness, fan_speed, led, switch)
         val postValues = post.toMap()
 
         val childUpdates = hashMapOf<String, Any>(
@@ -141,9 +124,9 @@ class createActivity : AppCompatActivity() {
         )
 
         dbRef.updateChildren(childUpdates).addOnSuccessListener {
-            Toast.makeText(this@createActivity, "Successfully added!!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@fanActivity, "Successfully added!!", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener{
-            Toast.makeText(this@createActivity, "Failed!!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@fanActivity, "Failed!!", Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -151,6 +134,7 @@ class createActivity : AppCompatActivity() {
 
     private fun addTextView(name: String, widgetType: String, status: String) : TextView {
         // creating TextView programmatically
+        Log.d("abcde",status)
         val txt = TextView(this)
         txt.textSize = 20f
         txt.gravity = Gravity.CENTER
@@ -194,14 +178,14 @@ class createActivity : AppCompatActivity() {
                 Log.d("Create", btnAttr.name+"yes")
                 if (btnAttr.name.equals(sName)){
                     txtBox.text = btnAttr.name.toUpperCase()+"("+btnAttr.WIDGET_TYPE+"): 1"
-                    lcdswitch = "1"
+                    switch = "1"
                 }
             }
             else{
                 Log.d("Create", btnAttr.name+"no")
                 if (btnAttr.name.equals(sName)){
                     txtBox.text = btnAttr.name.toUpperCase()+"("+btnAttr.WIDGET_TYPE+"): 0"
-                    lcdswitch = "0"
+                    switch = "0"
                 }
 
             }
@@ -237,18 +221,38 @@ class createActivity : AppCompatActivity() {
     }
 
     private fun addSpinner(attr: spinnerAttr, position: Int) {
+        Log.d("test1", attr.status+"2")
         val txtBox: TextView = addTextView(attr.name, attr.WIDGET_TYPE, attr.status)
+        Log.d("test1", attr.status+"a")
 
-        lcdled = attr.status
+        txtBox.text = attr.name.toUpperCase()+"("+attr.WIDGET_TYPE+") : "+attr.status
+        led = attr.status
+        Log.d("test1", attr.status+"b")
 
         val spinner = Spinner(this)
         spinner.layoutParams = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
+        Log.d("test1", attr.status+"c")
 
-        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, attr.list)
+        var red: String = "red"
+        var blue: String = "blue"
+        var green: String = "green"
+        Log.d("test1", attr.status+"d")
+
+        if (attr.status.toString().equals(red)){
+            spinner.setSelection(0, false)
+        }else if (attr.status.toString().equals(blue)){
+            spinner.setSelection(1, false)
+        }else if (attr.status.toString().equals(green)){
+            spinner.setSelection(2, false)
+        }
+
+        Log.d("test1", attr.status+"e")
+        val arrayAdapter = ArrayAdapter(this, R.layout.simple_spinner_item, attr.list)
         spinner.adapter = arrayAdapter
+        Log.d("test1", attr.status+"f")
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -257,15 +261,9 @@ class createActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                Toast.makeText(
-                    this@createActivity,
-                    attr.name + ": " + attr.list[position],
-                    Toast.LENGTH_SHORT
-                ).show()
-
                 if (attr.name == "led"){
                     txtBox.text = attr.name.toUpperCase()+"("+attr.WIDGET_TYPE+") : "+attr.list[position]
-                    lcdled = attr.list[position]
+                    led = attr.list[position]
                 }
 
             }
@@ -282,8 +280,6 @@ class createActivity : AppCompatActivity() {
     // Create RadioButton Dynamically
     private fun addRadioButton(attr: radioBtnAttr, position: Int) {
         val txtBox: TextView = addTextView(attr.name, attr.WIDGET_TYPE, attr.status)
-
-        lcdmode = attr.status
 
         Log.d("Spinner", attr.name)
         Log.d("Spinner", attr.amount.toString())
@@ -315,9 +311,7 @@ class createActivity : AppCompatActivity() {
             button.setOnClickListener(){
                 if (attr.name == "mode"){
                     txtBox.text = attr.name.toUpperCase()+"("+attr.WIDGET_TYPE+") : "+attr.list[i]
-                    lcdmode = attr.list[i].toString()
                 }
-
             }
 
             // Add Spinner to LinearLayout
@@ -333,9 +327,9 @@ class createActivity : AppCompatActivity() {
 
         //pass current value
         if (attr.name == "fan_speed"){
-            lcdfan = value.toString()
-        }else if (attr.name == "temperature")
-            lcdTemperature = value.toString()
+            fan_speed = value.toString()
+        }else if (attr.name == "brightness")
+            brightness = value.toString()
 
         val seekBar = SeekBar(this)
         val layoutParams = LinearLayout.LayoutParams(
@@ -367,11 +361,10 @@ class createActivity : AppCompatActivity() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {
                 if (attr.name == "fan_speed"){
-                    lcdfan = value.toString()
-                }else if (attr.name == "temperature")
-                    lcdTemperature = value.toString()
+                    fan_speed = value.toString()
+                }else if (attr.name == "brightness")
+                    brightness = value.toString()
             }
         })
     }
 }
-
