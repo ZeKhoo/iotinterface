@@ -14,10 +14,9 @@
 
         <activity
             android:name=".create.createActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GetData"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".widget5.UpDownActivityW5"
             android:exported="false"

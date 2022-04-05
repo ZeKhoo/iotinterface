@@ -42,16 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
-    <TextView
-        android:id="@+id/textViewWidget4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Widget 4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
-
     <Spinner
         android:id="@+id/spinnerw1"
         android:layout_width="391dp"
@@ -140,29 +130,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="454dp" />
 
-    <Spinner
-        android:id="@+id/spinnerw4"
-        android:layout_width="396dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="4dp"
-        android:minHeight="48dp"
-        android:padding="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewWidget4"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/buttonNext4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:text="Change Atttribute"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerw4" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
@@ -170,14 +137,29 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="592dp" />
 
-    <TextView
-        android:id="@+id/textViewWidget5"
+    <Button
+        android:id="@+id/buttonShowWidgetAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:text="Show widget"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerw5"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <Button
+        android:id="@+id/buttonNext5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Widget 5"
+        android:layout_marginTop="4dp"
+        android:text="Change Atttribute"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerw5"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/spinnerw5"
@@ -194,29 +176,47 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewWidget5"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/textViewWidget5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Widget 5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
     <Button
-        android:id="@+id/buttonNext5"
+        android:id="@+id/buttonNext4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:text="Change Atttribute"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerw5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerw4" />
 
-    <Button
-        android:id="@+id/buttonShowWidgetAll"
+    <Spinner
+        android:id="@+id/spinnerw4"
+        android:layout_width="396dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
+        android:minHeight="48dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWidget4"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textViewWidget4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="8dp"
-        android:text="Show widget"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerw5"
-        app:layout_constraintVertical_bias="0.285" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Widget 4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.iotinterface.DatabaseModel
 import com.example.iotinterface.databinding.ActivityOnoffw1Binding
 import com.example.iotinterface.create.createActivity
 import com.google.firebase.database.DatabaseReference
@@ -33,7 +32,7 @@ class OnOffActivityW1 : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.buttonAddWidgetW1.setOnClickListener{
+        binding.buttonAddOnOffW1.setOnClickListener{
             sendData()
             finish()
         }
@@ -48,17 +47,16 @@ class OnOffActivityW1 : AppCompatActivity() {
 
     }
 
-    private fun sendData()
-    {
-        var name = editTextTextOnOffNameW1.text.toString().trim()
-        var initial = editTextTextOnOffInitialW1.text.toString().trim()
-        var colour = editTextTextOnOffColourW1.text.toString().trim()
+    private fun sendData() {
+        val nameonw1 = editTextTextOnOffNameW1.text.toString().trim()
+        val initialonw1 = editTextTextOnOffInitialW1.text.toString().trim()
+        val colouronw1 = editTextTextOnOffColourW1.text.toString().trim()
 
-        if(name.isNotEmpty() && initial.isNotEmpty() && colour.isNotEmpty()){
-            var model = DatabaseModel(name,initial,colour)
-            var id= reference.push().key
+        if(nameonw1 .isNotEmpty() && initialonw1.isNotEmpty() && colouronw1.isNotEmpty()){
+            val modelOnOffW1 = DatabaseModelOnOffW1(nameonw1,initialonw1,colouronw1)
+            val id= reference.push().key
 
-            reference.child(id!!).setValue(model)
+            reference.child(id!!).setValue(modelOnOffW1)
 
             editTextTextOnOffNameW1.setText("")
             editTextTextOnOffInitialW1.setText("")

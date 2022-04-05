@@ -7,12 +7,12 @@
     tools:context=".widget1.ArrowActivityW1">
 
     <Button
-        android:id="@+id/buttonSaveArrowW1"
+        android:id="@+id/buttonAddArrowW1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:text="Show widget"
+        android:layout_marginTop="36dp"
+        android:text="Add widget"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewVariableArrowW1" />
 
@@ -31,10 +31,11 @@
         android:layout_width="78dp"
         android:layout_height="27dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
         android:text="Variable"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="519dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewControlArrowW1" />
 
     <TextView
         android:id="@+id/textViewControlArrowW1"
@@ -54,10 +55,11 @@
         android:id="@+id/spinnerVariableArrowW1"
         android:layout_width="119dp"
         android:layout_height="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="36dp"
         android:entries="@array/Control"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerControlArrowW1"
-        tools:layout_editor_absoluteX="195dp" />
+        app:layout_constraintStart_toEndOf="@+id/textViewVariableArrowW1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerControlArrowW1" />
 
     <Spinner
         android:id="@+id/spinnerDeviceArrowW1"
@@ -159,7 +161,7 @@
         android:id="@+id/buttonArrowW1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="Show widget"
         app:layout_constraintEnd_toEndOf="parent"

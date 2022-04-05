@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.example.iotinterface.create.createActivity
 import com.example.iotinterface.databinding.ActivityMainBinding
 import com.example.iotinterface.widget1.*
 import com.example.iotinterface.widget2.*
@@ -27,8 +28,6 @@ class MainActivity : AppCompatActivity() {
     val widget5: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        //testing github
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -194,6 +193,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        binding.buttonShowWidgetAll.setOnClickListener{
+            val intent = Intent(this, createActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
         binding.spinnerw1.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
 
@@ -203,7 +208,7 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-               Toast.makeText(this@MainActivity, "You Select " + widget1[position], Toast.LENGTH_LONG).show()
+               Toast.makeText(this@MainActivity, "You Select " + widget1[position], Toast.LENGTH_SHORT).show()
             }
 
 
@@ -221,7 +226,7 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                Toast.makeText(this@MainActivity, "You Select " + widget2[position], Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "You Select " + widget2[position], Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -237,7 +242,7 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                Toast.makeText(this@MainActivity, "You Select " + widget3[position], Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "You Select " + widget3[position], Toast.LENGTH_SHORT).show()
             }
 
 
@@ -255,7 +260,7 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                Toast.makeText(this@MainActivity, "You Select " + widget4[position], Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "You Select " + widget4[position], Toast.LENGTH_SHORT).show()
             }
 
 
@@ -273,7 +278,7 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                Toast.makeText(this@MainActivity, "You Select " + widget5[position], Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "You Select " + widget5[position], Toast.LENGTH_SHORT).show()
             }
 
 

@@ -173,4 +173,15 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDevicesSliderW5" />
+
+    <Button
+        android:id="@+id/buttonAddSliderW5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Add widget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVariablelSliderW5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
