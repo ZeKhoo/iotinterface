@@ -11,50 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IotInterface">
-        <activity
-            android:name=".widget5.RadioW5Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".widget4.RadioW4Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".widget3.RadioW3Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".widget2.RadioW2Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".widget1.RadioW1Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".widget5.Color_Pick_W5Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".widget4.Color_Pick_W4Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".widget3.Color_Pick_W3Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".widget2.Color_Pick_W2Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".widget1.Color_Pick_W1Activity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".create.createActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".widget5.UpDownActivityW5"
             android:exported="false"

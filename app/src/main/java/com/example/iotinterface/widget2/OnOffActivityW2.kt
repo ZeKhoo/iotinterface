@@ -4,15 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.iotinterface.R
-import com.example.iotinterface.create.createActivity
+import com.example.iotinterface.create.airconActivity
 import com.example.iotinterface.databinding.ActivityOnOffW2Binding
-import com.example.iotinterface.databinding.ActivityOnoffw1Binding
-import com.example.iotinterface.widget1.DatabaseModelOnOffW1
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_on_off_w2.*
-import kotlinx.android.synthetic.main.activity_onoffw1.*
 
 class OnOffActivityW2 : AppCompatActivity() {
 
@@ -31,7 +27,7 @@ class OnOffActivityW2 : AppCompatActivity() {
 
         binding.buttonOnOffW2.setOnClickListener {
             sendData()
-            val intent = Intent(this, createActivity::class.java)
+            val intent = Intent(this, airconActivity::class.java)
             startActivity(intent)
         }
 

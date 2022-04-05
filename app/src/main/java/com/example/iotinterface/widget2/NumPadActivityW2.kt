@@ -4,15 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.iotinterface.R
-import com.example.iotinterface.create.createActivity
+import com.example.iotinterface.create.airconActivity
 import com.example.iotinterface.databinding.ActivityNumPadW2Binding
-import com.example.iotinterface.databinding.ActivityNumpadw1Binding
-import com.example.iotinterface.widget1.DatabaseModelNumW1
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_num_pad_w2.*
-import kotlinx.android.synthetic.main.activity_numpadw1.*
 
 class NumPadActivityW2 : AppCompatActivity() {
 
@@ -32,7 +28,7 @@ class NumPadActivityW2 : AppCompatActivity() {
 
         binding.buttonNumPadW2.setOnClickListener {
             sendData()
-            val intent = Intent(this, createActivity::class.java)
+            val intent = Intent(this, airconActivity::class.java)
             startActivity(intent)
         }
 
