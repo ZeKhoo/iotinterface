@@ -113,7 +113,6 @@ class createActivity : AppCompatActivity() {
                 "Updated",
                 Toast.LENGTH_SHORT
             ).show()
-
         }
 
         dbRef = Firebase.database.reference
