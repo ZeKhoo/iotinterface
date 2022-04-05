@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.iotinterface.databinding.ActivityOnoffw1Binding
-import com.example.iotinterface.create.airconActivity
 import com.example.iotinterface.create.ceilingLightActivity
 import com.example.iotinterface.create.fanActivity
 import com.google.firebase.database.DatabaseReference
