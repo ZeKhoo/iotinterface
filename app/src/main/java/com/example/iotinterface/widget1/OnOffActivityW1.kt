@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.iotinterface.databinding.ActivityOnoffw1Binding
 import com.example.iotinterface.create.airconActivity
+import com.example.iotinterface.create.ceilingLightActivity
 import com.example.iotinterface.create.fanActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -29,7 +30,7 @@ class OnOffActivityW1 : AppCompatActivity() {
 
         binding.buttonOnOffW1.setOnClickListener {
             sendData()
-            val intent = Intent(this, fanActivity::class.java)
+            val intent = Intent(this, ceilingLightActivity::class.java)
             startActivity(intent)
         }
 

@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.iotinterface.create.IoTType.airconChild
+import com.example.iotinterface.create.IoTType.ceilingLightChild
 import com.example.iotinterface.create.IoTType.fanChild
 import com.example.iotinterface.create.widgetAttr.*
 import com.example.iotinterface.databinding.ActivityCreateBinding
@@ -21,7 +21,8 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import java.util.ArrayList
 
-class fanActivity : AppCompatActivity() {
+class ceilingLightActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityCreateBinding
     private lateinit var widgetRecyclerView: RecyclerView
     private lateinit var wgtArrayList: ArrayList<Any>
@@ -30,9 +31,8 @@ class fanActivity : AppCompatActivity() {
     private var SHORT_DELAY: Int = 1000
 
     private var switch: String = "0"
-    private var brightness: String = "50"
-    private var fan_speed: String = "2"
-    private var led: String = "red"
+    private var brightness: String = "20"
+    private var color: String = "red"
 
     //Firebase Reference
     private lateinit var dbRef: DatabaseReference
@@ -44,7 +44,7 @@ class fanActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Set Text
-        var widgetType: String = "Fan"
+        var widgetType: String = "Ceiling_Lights"
         binding.textViewTtile.text = widgetType
 
         wgtArrayList = arrayListOf<Any>()
@@ -52,10 +52,9 @@ class fanActivity : AppCompatActivity() {
 
         wgtArrayList.add(toggleBtnAttr("switch ", switch, "green"))
         wgtArrayList.add(seekBarAttr("brightness", 0, 100, brightness))
-        wgtArrayList.add(seekBarAttr("fan_speed", 0, 4, fan_speed))
-        wgtArrayList.add(spinnerAttr("led", led, ledList))
+        wgtArrayList.add(spinnerAttr("color", color, ledList))
 
-        var displayStatus:String = "Brightness = "+brightness+"\nFan Speed = "+fan_speed+"\nLed Color = "+led
+        var displayStatus:String = "Brightness = "+brightness+"\nColor = "+color
         binding.textViewStatus.setText(displayStatus)
 
         for (i in 0 until wgtArrayList.size){
@@ -85,26 +84,27 @@ class fanActivity : AppCompatActivity() {
             }
         }
 
+
         binding.buttonConfirm.setOnClickListener(){
 
-            var displayStatus:String = "Brightness = "+brightness+"\nFan Speed = "+fan_speed+"\nLed Color = "+led
+            var displayStatus:String = "Brightness = "+brightness+"\nColor = "+color
             binding.textViewStatus.setText(displayStatus)
 
-            Toast.makeText(this@fanActivity,
+            Toast.makeText(this@ceilingLightActivity,
                 "Updated",
                 Toast.LENGTH_SHORT
             ).show()
 
             //Updated Firebase
-            writeNewUser(widgetType, brightness, fan_speed, led, switch)
+            writeNewUser(widgetType, brightness, color, switch)
         }
-    }
 
+
+    }
     private fun writeNewUser(
         name: String,
         brightness: String,
-        fan_speed: String,
-        led: String,
+        color: String,
         switch: String
     ) {
         dbRef = Firebase.database.reference
@@ -116,7 +116,7 @@ class fanActivity : AppCompatActivity() {
             return
         }
 
-        val post = fanChild(name, brightness, fan_speed, led, switch)
+        val post = ceilingLightChild(name, brightness, color, switch)
         val postValues = post.toMap()
 
         val childUpdates = hashMapOf<String, Any>(
@@ -124,9 +124,9 @@ class fanActivity : AppCompatActivity() {
         )
 
         dbRef.updateChildren(childUpdates).addOnSuccessListener {
-            Toast.makeText(this@fanActivity, "Successfully added!!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@ceilingLightActivity, "Successfully added!!", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener{
-            Toast.makeText(this@fanActivity, "Failed!!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@ceilingLightActivity, "Failed!!", Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -134,7 +134,6 @@ class fanActivity : AppCompatActivity() {
 
     private fun addTextView(name: String, widgetType: String, status: String) : TextView {
         // creating TextView programmatically
-        Log.d("abcde",status)
         val txt = TextView(this)
         txt.textSize = 20f
         txt.gravity = Gravity.CENTER
@@ -226,7 +225,7 @@ class fanActivity : AppCompatActivity() {
         Log.d("test1", attr.status+"a")
 
         txtBox.text = attr.name.toUpperCase()+"("+attr.WIDGET_TYPE+") : "+attr.status
-        led = attr.status
+//        led = attr.status
         Log.d("test1", attr.status+"b")
 
         val spinner = Spinner(this)
@@ -261,9 +260,9 @@ class fanActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                if (attr.name == "led"){
+                if (attr.name == "color"){
                     txtBox.text = attr.name.toUpperCase()+"("+attr.WIDGET_TYPE+") : "+attr.list[position]
-                    led = attr.list[position]
+//                    led = attr.list[position]
                 }
 
             }
@@ -326,9 +325,7 @@ class fanActivity : AppCompatActivity() {
         var value: Int = attr.status.toInt()
 
         //pass current value
-        if (attr.name == "fan_speed"){
-            fan_speed = value.toString()
-        }else if (attr.name == "brightness")
+        if (attr.name == "brightness")
             brightness = value.toString()
 
         val seekBar = SeekBar(this)
@@ -360,9 +357,7 @@ class fanActivity : AppCompatActivity() {
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {
-                if (attr.name == "fan_speed"){
-                    fan_speed = value.toString()
-                }else if (attr.name == "brightness")
+                if (attr.name == "brightness")
                     brightness = value.toString()
             }
         })
