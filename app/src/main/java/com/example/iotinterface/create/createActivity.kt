@@ -137,16 +137,17 @@ class createActivity : AppCompatActivity() {
         toggleButton.textOff = "OFF"
 
         // Add ToggleButton to LinearLayout
-        binding.rootLayout.addView(toggleButton)
 
-        toggleButton.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                Toast.makeText(this, "On", Toast.LENGTH_LONG).show()
-            }
-            else{
-                Toast.makeText(this, "Off", Toast.LENGTH_LONG).show()
-            }
-        }
+//        binding.rootLayout.addView(toggleButton)
+//
+//        toggleButton.setOnCheckedChangeListener { buttonView, isChecked ->
+//            if (isChecked) {
+//                Toast.makeText(this, "On", Toast.LENGTH_LONG).show()
+//            }
+//            else{
+//                Toast.makeText(this, "Off", Toast.LENGTH_LONG).show()
+//            }
+//        }
 
     }
 
@@ -183,10 +184,10 @@ class createActivity : AppCompatActivity() {
         Log.d("Test1", "k")
 //        //add button in arraylist
 //        buttonsList.add(button)
-
-        Log.d("Test1", "f")
-        // Add Button to LinearLayout
-        binding.rootLayout.addView(button)
+//
+//        Log.d("Test1", "f")
+//        // Add Button to LinearLayout
+//        binding.rootLayout.addView(button)
 
         Log.d("Test1", "g")
         //SetOnClickListener

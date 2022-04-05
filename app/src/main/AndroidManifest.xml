@@ -13,8 +13,10 @@
         android:theme="@style/Theme.IotInterface">
 
         <activity
-            android:name=".GetData"
-            android:exported="false" />
+            android:name=".create.createActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".widget5.UpDownActivityW5"
             android:exported="false"
