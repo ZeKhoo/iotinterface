@@ -6,6 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".widget4.UpDownActivityW4">
 
+    <Button
+        android:id="@+id/buttonAddAdjusterW4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Add widget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVariableAdjusterW4" />
+
+    <Spinner
+        android:id="@+id/spinnerVariableAdjustW4"
+        android:layout_width="141dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewVariableAdjusterW4"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerControlAdjustW4" />
+
+    <TextView
+        android:id="@+id/textViewVariableAdjusterW4"
+        android:layout_width="142dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:text="Variable"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewControlAdjusterW4" />
+
+    <Spinner
+        android:id="@+id/spinnerControlAdjustW4"
+        android:layout_width="141dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/Control"
+        app:layout_constraintStart_toEndOf="@+id/textViewControlAdjusterW4"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDeviceAdjustW4" />
+
+    <TextView
+        android:id="@+id/textViewControlAdjusterW4"
+        android:layout_width="142dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:text="Control/Status"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDeviceAdjusterW4" />
+
+    <TextView
+        android:id="@+id/textViewUpDownW4"
+        android:layout_width="161dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        android:text="Adjuster"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/editTextTextUpDownColourW4"
         android:layout_width="0dp"
@@ -55,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextUpDownInitialW4" />
 
     <EditText
-        android:id="@+id/editTextTextUpDownW4"
+        android:id="@+id/editTextTextUpDownNameW4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -84,19 +147,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextUpDownW4" />
-
-    <TextView
-        android:id="@+id/textViewUpDownW4"
-        android:layout_width="161dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="16dp"
-        android:text="Adjuster"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextUpDownNameW4" />
 
     <Button
         android:id="@+id/buttonAdjusterW4"
@@ -106,6 +157,27 @@
         android:layout_marginEnd="16dp"
         android:text="Show Widget"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerVariableAdjustW4" />
+
+    <TextView
+        android:id="@+id/textViewDeviceAdjusterW4"
+        android:layout_width="119dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:text="Device"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextUpDownColourW4" />
+
+    <Spinner
+        android:id="@+id/spinnerDeviceAdjustW4"
+        android:layout_width="141dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="24dp"
+        android:entries="@array/Devices"
+        app:layout_constraintStart_toEndOf="@+id/textViewDeviceAdjusterW4"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextUpDownColourW4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

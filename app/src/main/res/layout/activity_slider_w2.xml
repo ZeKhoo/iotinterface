@@ -6,6 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".widget2.SliderActivityW2">
 
+    <Spinner
+        android:id="@+id/spinnerVariablelSlidersW2"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="56dp"
+        android:entries="@array/Control"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintStart_toEndOf="@+id/textViewVariablelSliderW2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerControlSlidersW2" />
+
+    <Spinner
+        android:id="@+id/spinnerControlSlidersW2"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/Control"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toEndOf="@+id/textViewStatusSliderW2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDeviceSlidersW2" />
+
+    <TextView
+        android:id="@+id/textViewVariablelSliderW2"
+        android:layout_width="134dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:text="Variable"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStatusSliderW2" />
+
+    <Spinner
+        android:id="@+id/spinnerDeviceSlidersW2"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:entries="@array/Devices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toEndOf="@+id/textViewStatusSliderW2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextSliderColorW2" />
+
+    <TextView
+        android:id="@+id/textViewDevicesSliderW2"
+        android:layout_width="134dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:text="Device"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextSliderColorW2" />
+
     <EditText
         android:id="@+id/editTextTextSliderColorW2"
         android:layout_width="0dp"
@@ -88,13 +144,12 @@
 
     <TextView
         android:id="@+id/textViewSliderAttributeW2"
-        android:layout_width="112dp"
-        android:layout_height="37dp"
+        android:layout_width="111dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:text="Slider"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,6 +161,17 @@
         android:layout_marginEnd="16dp"
         android:text="Show Widget"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextSliderColorW2" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerVariablelSlidersW2" />
+
+    <TextView
+        android:id="@+id/textViewStatusSliderW2"
+        android:layout_width="134dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Control/Status"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDevicesSliderW2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

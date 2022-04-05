@@ -6,6 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".widget3.OnOffActivityW3">
 
+    <Button
+        android:id="@+id/buttonAddWidgetW3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:text="Add Widget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDeviceOnOffW3" />
+
+    <Spinner
+        android:id="@+id/spinnerControlOnOffW3"
+        android:layout_width="142dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/Devices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintStart_toEndOf="@+id/textViewDeviceOnOffW3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextOnOffColourW3" />
+
+    <TextView
+        android:id="@+id/textViewDeviceOnOffW3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Devices:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextOnOffColourW3" />
+
     <EditText
         android:id="@+id/editTextTextOnOffNameW3"
         android:layout_width="0dp"
@@ -42,11 +74,11 @@
         android:id="@+id/buttonOnOffW3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Show Widget"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextOnOffColourW3" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerControlOnOffW3" />
 
     <EditText
         android:id="@+id/editTextTextOnOffColourW3"

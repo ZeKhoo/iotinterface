@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-
+    //testing github
     val widget1: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
     val widget2: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
     val widget3: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     val widget5: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster")
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //testing github
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
