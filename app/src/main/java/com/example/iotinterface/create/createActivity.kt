@@ -1,9 +1,8 @@
 package com.example.iotinterface.create
 
-import android.graphics.Color
+import android.content.ContentValues.TAG
 import android.os.Build
 import android.os.Bundle
-import android.text.Html
 import android.util.Log
 import android.view.Gravity
 import android.view.View
@@ -13,13 +12,12 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iotinterface.R
+import com.example.iotinterface.create.IoTType.airconChild
 import com.example.iotinterface.create.widgetAttr.*
 import com.example.iotinterface.databinding.ActivityCreateBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import org.w3c.dom.Text
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -35,6 +33,7 @@ class createActivity : AppCompatActivity() {
     private var lcdled: String = "red"
     private var lcdmode: String = "Fan"
     private var lcdTemperature: String = "20"
+    private var lcdswitch: String = "1"
 
     //Firebase Reference
     private lateinit var dbRef: DatabaseReference
@@ -58,11 +57,12 @@ class createActivity : AppCompatActivity() {
 //        )
 
         //Set Text
-        binding.textViewTtile.text = "Aircon"
+        var widgetType: String = "Aircon"
+        binding.textViewTtile.text = widgetType
 
         wgtArrayList = arrayListOf<Any>()
         val ledList = arrayOf("red", "blue", "green")
-        val modelist = arrayOf("Fan", "Cool", "Sleep")
+        val modelist = arrayOf("fan", "cool", "sleep")
 
         wgtArrayList.add(toggleBtnAttr("switch ", "1", "green"))
         wgtArrayList.add(seekBarAttr("fan_speed", 0, 4, "1"))
@@ -103,9 +103,6 @@ class createActivity : AppCompatActivity() {
 
         binding.buttonConfirm.setOnClickListener(){
 
-            Log.d("Create", lcdled)
-            Log.d("Create", lcdmode)
-
             var updateStatus:String = "Fan speed = "+lcdfan+"\nLed Color = "+lcdled+"\nMode = "+lcdmode+"\nTemperature = "+lcdTemperature
             binding.textViewStatus.setText(updateStatus)
 
@@ -113,20 +110,41 @@ class createActivity : AppCompatActivity() {
                 "Updated",
                 Toast.LENGTH_SHORT
             ).show()
+
+            Log.d("Create", lcdswitch)
+
+            //Updated Firebase
+            writeNewUser(widgetType, lcdfan, lcdled, lcdmode, lcdTemperature, lcdswitch)
         }
-
-        dbRef = Firebase.database.reference
-
     }
 
-    private fun writeNewUser(arr: btnAttr, i: Int) {
-        val format1 = SimpleDateFormat("yyyyMM")
-        val child1 = format1.format(Date())
+    private fun writeNewUser(name: String, fan_speed: String, led: String, mode: String, temperature: String, switch: String) {
+        dbRef = Firebase.database.reference
+        // Create new post at /user-posts/$userid/$postid and at
+        // /posts/$postid simultaneously
+        val key = dbRef.child(name).child("Control").push().key
+        if (key == null) {
+            Log.w(TAG, "Couldn't get push key for posts")
+            return
+        }
 
-        val format2 = SimpleDateFormat("dd")
-        val child2 = format2.format(Date())
+        var lcdfan: String = "Fan Speed = "+ fan_speed
+        var lcdled:String = "Led Color = " + led
+        var lcdmode: String = "Mode = "+ mode
+        var lcdtemp:String = "Temperature = " + temperature
 
-        dbRef.child(arr.name).child("Status")
+        val post = airconChild(name, fan_speed, lcdfan, lcdled, lcdmode, lcdtemp, led, mode, switch, temperature)
+        val postValues = post.toMap()
+
+        val childUpdates = hashMapOf<String, Any>(
+            "/$name/Control" to postValues
+        )
+
+        dbRef.updateChildren(childUpdates).addOnSuccessListener {
+            Toast.makeText(this@createActivity, "Successfully added!!", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener{
+            Toast.makeText(this@createActivity, "Failed!!", Toast.LENGTH_SHORT).show()
+        }
 
     }
 
@@ -170,12 +188,22 @@ class createActivity : AppCompatActivity() {
         // Add ToggleButton to LinearLayout
         binding.container.addView(toggleButton)
 
+        var sName: String = btnAttr.name.toString()
         toggleButton.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                txtBox.text = btnAttr.name.toUpperCase()+"("+btnAttr.WIDGET_TYPE+"): 1"
+                Log.d("Create", btnAttr.name+"yes")
+                if (btnAttr.name.equals(sName)){
+                    txtBox.text = btnAttr.name.toUpperCase()+"("+btnAttr.WIDGET_TYPE+"): 1"
+                    lcdswitch = "1"
+                }
             }
             else{
-                txtBox.text = btnAttr.name.toUpperCase()+"("+btnAttr.WIDGET_TYPE+"): 0"
+                Log.d("Create", btnAttr.name+"no")
+                if (btnAttr.name.equals(sName)){
+                    txtBox.text = btnAttr.name.toUpperCase()+"("+btnAttr.WIDGET_TYPE+"): 0"
+                    lcdswitch = "0"
+                }
+
             }
         }
 
@@ -235,8 +263,11 @@ class createActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                txtBox.text = attr.name.toUpperCase()+"("+attr.WIDGET_TYPE+") : "+attr.list[position]
-                lcdled = attr.list[position]
+                if (attr.name == "led"){
+                    txtBox.text = attr.name.toUpperCase()+"("+attr.WIDGET_TYPE+") : "+attr.list[position]
+                    lcdled = attr.list[position]
+                }
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
@@ -282,8 +313,11 @@ class createActivity : AppCompatActivity() {
             Log.d("Spinner", "success")
 
             button.setOnClickListener(){
-                txtBox.text = attr.name.toUpperCase()+"("+attr.WIDGET_TYPE+") : "+attr.list[i]
-                lcdmode = attr.list[i].toString()
+                if (attr.name == "mode"){
+                    txtBox.text = attr.name.toUpperCase()+"("+attr.WIDGET_TYPE+") : "+attr.list[i]
+                    lcdmode = attr.list[i].toString()
+                }
+
             }
 
             // Add Spinner to LinearLayout
