@@ -97,6 +97,36 @@ class tvActivity : AppCompatActivity() {
             changeClicked = "1"
         }
 
+        binding.button1.setOnClickListener(){
+            channel = "1"
+            binding.textViewKeypad.text = "CHANNEL :"+channel
+        }
+
+        binding.button2.setOnClickListener(){
+            channel = "2"
+            binding.textViewKeypad.text = "CHANNEL :"+channel
+        }
+
+        binding.button3.setOnClickListener(){
+            channel = "3"
+            binding.textViewKeypad.text = "CHANNEL :"+channel
+        }
+
+        binding.button4.setOnClickListener(){
+            channel = "4"
+            binding.textViewKeypad.text = "CHANNEL :"+channel
+        }
+
+        binding.button5.setOnClickListener(){
+            channel = "5"
+            binding.textViewKeypad.text = "CHANNEL :"+channel
+        }
+
+        binding.button6.setOnClickListener(){
+            channel = "6"
+            binding.textViewKeypad.text = "CHANNEL :"+channel
+        }
+
         //keypadFunction
         if (change == "1"){
             binding.button1.isClickable = false
@@ -108,36 +138,6 @@ class tvActivity : AppCompatActivity() {
             binding.button7.isClickable = false
             binding.button8.isClickable = false
             binding.button9.isClickable = false
-
-            binding.button1.setOnClickListener(){
-                channel = "1"
-                binding.textViewKeypad.text = "CHANNEL :"+channel
-            }
-
-            binding.button2.setOnClickListener(){
-                channel = "2"
-                binding.textViewKeypad.text = "CHANNEL :"+channel
-            }
-
-            binding.button3.setOnClickListener(){
-                channel = "3"
-                binding.textViewKeypad.text = "CHANNEL :"+channel
-            }
-
-            binding.button4.setOnClickListener(){
-                channel = "4"
-                binding.textViewKeypad.text = "CHANNEL :"+channel
-            }
-
-            binding.button5.setOnClickListener(){
-                channel = "5"
-                binding.textViewKeypad.text = "CHANNEL :"+channel
-            }
-
-            binding.button6.setOnClickListener(){
-                channel = "6"
-                binding.textViewKeypad.text = "CHANNEL :"+channel
-            }
 
             binding.button7.setOnClickListener(){
                 channel = "7"
@@ -159,14 +159,6 @@ class tvActivity : AppCompatActivity() {
                 binding.textViewKeypad.text = "CHANNEL :"+channel
             }
             ok = "1"
-        }
-
-
-
-        binding.buttonOkay.setOnClickListener(){
-
-            channel = "1"
-            binding.textViewKeypad.text = "CHANNEL :"+channel
         }
 
         binding.buttonConfirm.setOnClickListener(){
@@ -460,4 +452,6 @@ class tvActivity : AppCompatActivity() {
             }
         })
     }
+
+
 }
