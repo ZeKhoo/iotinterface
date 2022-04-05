@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.iotinterface.R
-import com.example.iotinterface.create.airconActivity
+import com.example.iotinterface.create.createActivity
 import com.example.iotinterface.databinding.ActivityArrowW1Binding
 import com.example.iotinterface.databinding.ActivityColorPickW1Binding
 import com.example.iotinterface.databinding.ActivityOnoffw1Binding
@@ -30,7 +30,7 @@ class Color_Pick_W1Activity : AppCompatActivity() {
 
         binding.buttonColorPickW1.setOnClickListener {
             sendData()
-            val intent = Intent(this, airconActivity::class.java)
+            val intent = Intent(this, createActivity::class.java)
             startActivity(intent)
         }
 

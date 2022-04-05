@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IotInterface">
         <activity
-            android:name=".create.airconActivity"
-            android:exported="false" />
+            android:name=".create.createActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+
         <activity
             android:name=".create.ceilingLightActivity"
             android:exported="false"
@@ -22,6 +24,17 @@
             android:name=".create.fanActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".widget5.Color_Pick_W5Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".widget5.RadioW5Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".widget5.UpDownActivityW5"
             android:exported="false"
@@ -42,6 +55,17 @@
             android:name=".widget5.OnOffActivityW5"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".widget4.Color_Pick_W4Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".widget4.RadioW4Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".widget4.UpDownActivityW4"
             android:exported="false"
@@ -62,6 +86,17 @@
             android:name=".widget4.OnOffActivityW4"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".widget3.Color_Pick_W3Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".widget3.RadioW3Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".widget3.UpDownActivityW3"
             android:exported="false"
@@ -82,6 +117,17 @@
             android:name=".widget3.OnOffActivityW3"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".widget2.Color_Pick_W2Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".widget2.RadioW2Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".widget2.UpDownActivityW2"
             android:exported="false"
@@ -102,6 +148,18 @@
             android:name=".widget2.OnOffActivityW2"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
+
+        <activity
+            android:name=".widget1.Color_Pick_W1Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".widget1.RadioW1Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".widget1.UpDownActivityW1"
             android:exported="false"

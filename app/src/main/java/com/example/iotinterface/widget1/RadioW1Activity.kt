@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.iotinterface.R
-import com.example.iotinterface.create.airconActivity
+import com.example.iotinterface.create.createActivity
 import com.example.iotinterface.databinding.ActivityArrowW1Binding
 import com.example.iotinterface.databinding.ActivityRadioW1Binding
 import com.google.firebase.database.DatabaseReference
@@ -32,7 +32,7 @@ class RadioW1Activity : AppCompatActivity() {
 
         binding.buttonRadioW1.setOnClickListener {
             sendData()
-            val intent = Intent(this, airconActivity::class.java)
+            val intent = Intent(this, createActivity::class.java)
             startActivity(intent)
         }
 

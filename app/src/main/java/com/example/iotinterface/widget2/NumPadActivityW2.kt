@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.iotinterface.create.airconActivity
+import com.example.iotinterface.create.createActivity
 import com.example.iotinterface.databinding.ActivityNumPadW2Binding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -28,7 +28,7 @@ class NumPadActivityW2 : AppCompatActivity() {
 
         binding.buttonNumPadW2.setOnClickListener {
             sendData()
-            val intent = Intent(this, airconActivity::class.java)
+            val intent = Intent(this, createActivity::class.java)
             startActivity(intent)
         }
 

@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.iotinterface.create.airconActivity
+import com.example.iotinterface.create.createActivity
 import com.example.iotinterface.databinding.ActivityOnOffW4Binding
 import com.example.iotinterface.widget3.DatabaseModelOnW3
 import com.google.firebase.database.DatabaseReference
@@ -27,7 +27,7 @@ class OnOffActivityW4 : AppCompatActivity() {
 
         binding.buttonOnOffW4.setOnClickListener {
             sendData()
-            val intent = Intent(this, airconActivity::class.java)
+            val intent = Intent(this, createActivity::class.java)
             startActivity(intent)
         }
 

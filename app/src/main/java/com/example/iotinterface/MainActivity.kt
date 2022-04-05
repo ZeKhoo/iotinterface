@@ -3,11 +3,14 @@ package com.example.iotinterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.iotinterface.create.airconActivity
+import com.example.iotinterface.create.ceilingLightActivity
+import com.example.iotinterface.create.createActivity
+import com.example.iotinterface.create.fanActivity
 import com.example.iotinterface.databinding.ActivityMainBinding
 import com.example.iotinterface.widget1.*
 import com.example.iotinterface.widget2.*
@@ -20,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    //testing github
     val widget1: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster","Color Picker", "Radio Button")
     val widget2: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster","Color Picker", "Radio Button")
     val widget3: Array<String> = arrayOf("On/Off", "Slider", "Number Pad","Arrow","Adjuster","Color Picker", "Radio Button")
@@ -198,6 +200,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonNext5.setOnClickListener {
+
             val option5 = binding.spinnerw5.selectedItemPosition
 
             if(option5 == 0){
@@ -234,8 +237,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonShowWidgetAll.setOnClickListener{
-            val intent = Intent(this, airconActivity::class.java)
+
+            val intent = Intent(this, createActivity::class.java)
             startActivity(intent)
+
+//                val intent = Intent(this, ceilingLightActivity::class.java)
+//                startActivity(intent)
+
+//                val intent = Intent(this, fanActivity::class.java)
+//                startActivity(intent)
+//
+
+
+//               val intent = Intent(this, fanActivity::class.java)
+//               startActivity(intent)
+//
+//
+
         }
 
 

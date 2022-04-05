@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 
 //import com.example.iotinterface.widget1.DatabaseModelSliderW1
-import com.example.iotinterface.create.airconActivity
+import com.example.iotinterface.create.createActivity
 import com.example.iotinterface.databinding.ActivitySliderw1Binding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -28,7 +28,7 @@ class SliderActivityW1 : AppCompatActivity() {
 
         binding.buttonSliderW1.setOnClickListener {
             sendData()
-            val intent = Intent(this, airconActivity::class.java)
+            val intent = Intent(this, createActivity::class.java)
             startActivity(intent)
         }
 
