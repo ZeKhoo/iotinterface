@@ -130,6 +130,7 @@ class createActivity : AppCompatActivity() {
 
     }
 
+
     private fun addTextView(name: String, widgetType: String, status: String) : TextView {
         // creating TextView programmatically
         val txt = TextView(this)
