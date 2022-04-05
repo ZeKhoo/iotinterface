@@ -3,14 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w1.xml" value="0.264" />
+        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w1.xml" value="0.4" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w2.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w3.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w4.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_arrow_w5.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_create.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_get_data.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_num_pad_w2.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_num_pad_w3.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_num_pad_w4.xml" value="0.25" />
@@ -25,7 +25,7 @@
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_slider_w3.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_slider_w4.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_slider_w5.xml" value="0.25" />
-        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_sliderw1.xml" value="0.4" />
+        <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_sliderw1.xml" value="0.264" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_up_down_w2.xml" value="0.20430107526881722" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_up_down_w3.xml" value="0.25" />
         <entry key="..\:/combine/iotinterface/app/src/main/res/layout/activity_up_down_w4.xml" value="0.25" />

@@ -28,10 +28,6 @@ class createActivity : AppCompatActivity() {
         binding = ActivityCreateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val actionBar = supportActionBar
-        actionBar!!.title = "Attributes Descriptor"
-        actionBar.setDisplayHomeAsUpEnabled(true)
-
 //        //Declare arrayList Attr
 //        widgetRecyclerView = binding.container
 //        widgetRecyclerView.layoutManager = LinearLayoutManager(this)

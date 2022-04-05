@@ -84,4 +84,12 @@
     //Direction Button
     <string name="OK">OK</string>
 
+    //Spinner
+    <string name="selected_item">Selected item:</string>
+
+    //Radio Button
+    <string name="you_selected">You selected:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
 </resources>
