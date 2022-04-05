@@ -3,13 +3,17 @@ package com.example.iotinterface.create
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iotinterface.R
+import com.example.iotinterface.create.widgetAttr.*
 import com.example.iotinterface.databinding.ActivityCreateBinding
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,8 +21,9 @@ import java.util.*
 class createActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateBinding
     private lateinit var widgetRecyclerView: RecyclerView
-    private lateinit var wgtArrayList: ArrayList<Attr>
+    private lateinit var wgtArrayList: ArrayList<Any>
     private lateinit var buttonsList: ArrayList<Button>
+    private lateinit var radioBtnList: ArrayList<RadioButton>
 
     //Firebase Reference
     private lateinit var dbRef: DatabaseReference
@@ -28,11 +33,11 @@ class createActivity : AppCompatActivity() {
         binding = ActivityCreateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        //Declare arrayList Attr
+        //Declare arrayList Attr
 //        widgetRecyclerView = binding.container
 //        widgetRecyclerView.layoutManager = LinearLayoutManager(this)
 //        widgetRecyclerView.setHasFixedSize(true)
-//
+
 //        widgetRecyclerView.addItemDecoration(
 //            DividerItemDecoration(
 //                binding.container.getContext(),
@@ -40,76 +45,32 @@ class createActivity : AppCompatActivity() {
 //            )
 //        )
 
-        Log.d("Test1", "a")
-        wgtArrayList = arrayListOf<Attr>()
-        wgtArrayList.add(Attr("Aircon", 200, 300, "On", "button"))
-        wgtArrayList.add(Attr("Fan", 200, 300, "Off", "toggleButton"))
-        wgtArrayList.add(Attr("Aircon", 200, 300, "On", "button"))
-        wgtArrayList.add(Attr("Fan", 200, 300, "On", "toggleButton"))
-
-
-        Log.d("Test1", "b")
-        for (i in 0 until wgtArrayList.size){
-//            var name:String = wgtAttrList[i].name
-//            var height:Int = wgtAttrList[i].height
-//            var width:Int = wgtAttrList[i].width
-//            var value: String = wgtAttrList[i].value
-
-            Log.d("Test1", "c")
-            when (wgtArrayList[i].widgetType){
-                "button" -> addButton(wgtArrayList[i], i)
-                "toggleButton" -> addToggleButton(wgtArrayList[i], i)
-//                "radioButton" -> addRadioButton(wgtArrayList[i], i)
-
-            }
-        }
-
-//        Log.d("Test1", "d")
-//        val adapter = createAdapter(wgtArrayList)
-//        widgetRecyclerView.adapter = adapter
-
-//        adapter.setOnItemClickListener(onject:)
-
-        //Write Firebase
-//        for (i in 0 until wgtArrayList.size) {
-//            writeNewUser(wgtArrayList[i], i)
-//        }
-
-//        val container: LinearLayout = findViewById(R.id.container)
-
-//        val keypad = findViewById<View>(R.id.keypad) as TableLayout
-//        keypad.visibility = View.GONE
-
-//        fun onClick(arg0: View){
-//            val layoutInflater = baseContext.getSystemService() as LayoutInflater
-//        }
-
-
-//        val llTestMenuMain = findViewById<LinearLayout>(R.id.llTestMenuMain)
+//        wgtArrayList = arrayListOf<Any>()
+//        val ledList = arrayOf("red", "blue", "green")
+//        val modelist = arrayOf("Fan", "Cool", "Sleep")
+//        wgtArrayList.add(seekBarAttr("fan_speed", 0, 100, "20"))
+//        wgtArrayList.add(spinnerAttr("led", "0", ledList))
+//        wgtArrayList.add(radioBtnAttr("mode", 0, "Fan", "red", modelist))
+//        wgtArrayList.add(toggleBtnAttr("switch", "1", "red"))
+//        wgtArrayList.add(seekBarAttr("temperature", 16, 30, "20"))
 //
-//        //Create Recycle View dynamically in Linear Layout
-//        val rv = RecyclerView(this)
-//        val params = RecyclerView.LayoutParams(
-//            RecyclerView.LayoutParams.MATCH_PARENT,
-//            RecyclerView.LayoutParams.WRAP_CONTENT
-//        )
-//        rv.layoutParams = params
+//        for (i in 0 until wgtArrayList.size){
+//            var className = wgtArrayList.javaClass.simpleName
+//            when(className){
+//                "btnAttr" -> addButton(wgtArrayList[i] as btnAttr, i)
+//                "toggleBtnAttr" -> addToggleButton(wgtArrayList[i] as toggleBtnAttr, i)
+//                "spinnerAttr" -> addSpinner(wgtArrayList[i] as spinnerAttr, i)
+//                "radioBtnAttr" -> addRadioButton(wgtArrayList[i] as radioBtnAttr, i)
+//                "seekBarAttr" -> addSeekBar(wgtArrayList[i] as seekBarAttr, i)
+//            }
+//        }
 //
-//        //Create Linear Layout in Recycler View
-//        val llm = LinearLayoutManager(this)
-//        adapter = RVAdapter_ButtonList(tests, null, this, buttonFontSize)
-//        rv.adapter = adapter
-//        rv.layoutManager = llm
-//        rv.visibility = View.VISIBLE
+//        dbRef = Firebase.database.reference
 
-        //Create Button based on arrayList
-//        Create List of Button
 
     }
 
-
-
-    private fun writeNewUser(arr: Attr, i: Int) {
+    private fun writeNewUser(arr: btnAttr, i: Int) {
         val format1 = SimpleDateFormat("yyyyMM")
         val child1 = format1.format(Date())
 
@@ -120,9 +81,19 @@ class createActivity : AppCompatActivity() {
 
     }
 
+    private fun addTextView(name: String, widgetType: String) {
+        // creating TextView programmatically
+        val txt = TextView(this)
+        txt.textSize = 20f
+        txt.text = "$name($widgetType)"
 
-    private fun addToggleButton(attr: Attr, position: Int) {
-//        addTextView(attr.name, attr.widgetType)
+        txt.gravity = Gravity.LEFT
+        //add TextView to LinearLayout
+        binding.container.addView(txt)
+    }
+
+    private fun addToggleButton(btnAttr: toggleBtnAttr, position: Int) {
+        addTextView(btnAttr.name, btnAttr.WIDGET_TYPE)
 
         // Create ToggleButton programmatically.
         val toggleButton = ToggleButton(this)
@@ -131,13 +102,13 @@ class createActivity : AppCompatActivity() {
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
         toggleButton.gravity = Gravity.CENTER
-        toggleButton.isChecked = attr.status == "On"
+        toggleButton.isChecked = btnAttr.status == "On"
 
         toggleButton.textOn = "ON"
         toggleButton.textOff = "OFF"
 
         // Add ToggleButton to LinearLayout
-        binding.rootLayout.addView(toggleButton)
+        binding.container.addView(toggleButton)
 
         toggleButton.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
@@ -150,97 +121,93 @@ class createActivity : AppCompatActivity() {
 
     }
 
-    private fun addTextView(name: String, widgetType: String) {
-        // creating TextView programmatically
-        val tv_dynamic = TextView(this)
-        tv_dynamic.textSize = 20f
-//        tv_dynamic.text = name + "(" +
+    private fun addButton(attr: btnAttr, position: Int){
+        addTextView(attr.name, attr.WIDGET_TYPE)
 
-        // add TextView to LinearLayout
-//        binding.rootLayout.addView(tv_dynamic)
-    }
-
-    private fun addButton(arr: Attr, position: Int){
-        Log.d("Test1", "e")
         // Create Button programmatically.
         val button = Button(this)
 
-        Log.d("Test1", "i")
         //Set Width and Height of Button (width, height)
         button.layoutParams = LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
-        Log.d("Test1", "j")
         (button.layoutParams as LinearLayout.LayoutParams).setMargins(10, 50, 10, 50)
         button.gravity = Gravity.CENTER
-        button.text = arr.name
+        button.text = attr.name
         button.isAllCaps = true
 
 //        //Set Button ID (Int)
 //        button.id = R.id.TEXT_ID
 
-        Log.d("Test1", "k")
-//        //add button in arraylist
+        //add button in arraylist
 //        buttonsList.add(button)
 
-        Log.d("Test1", "f")
         // Add Button to LinearLayout
-        binding.rootLayout.addView(button)
+        binding.container.addView(button)
 
-        Log.d("Test1", "g")
-        //SetOnClickListener
-        button.setOnClickListener{
-            Toast.makeText(this, "a"+position, Toast.LENGTH_LONG).show()
+    }
+
+    private fun addSpinner(attr: spinnerAttr, position: Int) {
+        addTextView(attr.name, attr.WIDGET_TYPE)
+
+        val spinner = Spinner(this)
+        spinner.layoutParams = LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+
+        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, attr.list)
+        spinner.adapter = arrayAdapter
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long
+            ) {
+                Toast.makeText(
+                    this@createActivity,
+                    getString(R.string.selected_item) + " " + attr.list[position],
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Code to perform some action when nothing is selected
+            }
         }
-        Log.d("Test1", "h")
 
-//        val layout = findViewById<View>(R.id.rootLayout) as LinearLayout
-//        layout.addView(button)
+        // Add Spinner to LinearLayout
+        binding.container.addView(spinner)
+    }
 
-//        //Set Padding of Button
-//        val padding = resources.getDimension(R.dimen.text_padding).toInt()
-//        button.setPadding(padding, padding, padding, padding)
-//
-//        //Set Margin of Button
-//        val margin = resources.getDimension(R.dimen.text_margin).toInt()
-//        val layoutParams = LinearLayout.LayoutParams(
-//            ViewGroup.LayoutParams.WRAP_CONTENT,
-//            ViewGroup.LayoutParams.WRAP_CONTENT
-//        )
-//        layoutParams.setMargins(margin, margin, margin, margin)
-//        button.layoutParams = layoutParams
-//
-//        //Set Background of Button
-//        val color = ContextCompat.getColor(this, R.color.purple_200)
-//        button.setBackgroundColor(color)
-//
-//        //Set Visibility
-//        button.visibility = View.VISIBLE
-//
-//        //Set Text of Button
-//        button.text = getString(R.string.click_on_me)
-//
-//        //Set Color Text of Button
-//        val textColor = ContextCompat.getColor(this, R.color.black)
-//        button.setTextColor(textColor)
-//
-//        //Set Gravity of Button == (Align)
-//        button.gravity = Gravity.CENTER
-//
-//        //Set Text in Uppercase or Lowercase
-//        button.text = "Hello Tutorialwing"
-//        button.isAllCaps = true //HELLO TUTORIALWING
-//        button.isAllCaps = false //Hello Tutorialwing
-//
-//        //Set Size of Text in Button
-//        button.textSize = resources.getDimension(R.dimen.text_margin)
-//
-//        //Set Style (Bold/italic) of Text in Button
-//        button.typeface = Typeface.DEFAULT_BOLD;
-//
-//        //Set Letter Spacing of Text in Button
-//        button.letterSpacing = resources.getDimension(R.dimen.text_letter_spacing)
+    // Create RadioButton Dynamically
+    private fun addRadioButton(attr: radioBtnAttr, position: Int) {
+
+        addTextView(attr.name, attr.WIDGET_TYPE)
+
+        for (i in 0 until attr.amount){
+            val button = Button(this)
+
+            //Set Width and Height of Button (width, height)
+            button.layoutParams = LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            (button.layoutParams as LinearLayout.LayoutParams).setMargins(10, 50, 10, 50)
+            button.gravity = Gravity.CENTER
+            button.text = attr.name
+            button.isAllCaps = true
+
+            // Add Spinner to LinearLayout
+            binding.container.addView(button)
+
+        }
+    }
+
+    private fun addSeekBar(seekBarAttr: seekBarAttr, i: Int) {
 
     }
 }

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.IotInterface">
 
         <activity
+            android:name=".create.createActivity"
+            android:exported="false" />
+        <activity
             android:name=".GetData"
             android:exported="false" />
         <activity
