@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.iotinterface.create.ceilingLightActivity
 import com.example.iotinterface.create.createActivity
 import com.example.iotinterface.create.fanActivity
+import com.example.iotinterface.create.tvActivity
 import com.example.iotinterface.databinding.ActivityMainBinding
 import com.example.iotinterface.widget1.*
 import com.example.iotinterface.widget2.*
@@ -252,7 +253,8 @@ class MainActivity : AppCompatActivity() {
 //               val intent = Intent(this, fanActivity::class.java)
 //               startActivity(intent)
 //
-//
+//               val intent = Intent(this, tvActivity::class.java)
+//               startActivity(intent)
 
         }
 

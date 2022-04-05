@@ -98,6 +98,7 @@
 
     //Direction Button
     <string name="OK">OK</string>
+    <string name="change">CHANGE</string>
 
     //Spinner
     <string name="selected_item">Selected item:</string>
