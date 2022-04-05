@@ -3,7 +3,7 @@ package com.example.iotinterface.create.widgetAttr
 class btnAttr {
     var name: String = ""
     var status: String = ""
-    val WIDGET_TYPE = "button"
+    val WIDGET_TYPE = "Button"
     var color: String = ""
 
     constructor(name: String, status: String, color: String) {

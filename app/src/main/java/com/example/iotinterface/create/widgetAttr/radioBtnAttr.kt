@@ -4,7 +4,7 @@ class radioBtnAttr {
     var name: String = ""
     var amount: Int = 0
     var status: String = ""
-    val WIDGET_TYPE = "radioButton"
+    val WIDGET_TYPE = "Radio Button"
     var color: String = ""
     var list: Array<String>
 
